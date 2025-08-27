@@ -1,12 +1,12 @@
-async function init(){
+async function init() {
   try {
-  // Handle window/document not found in nodejs.
-  await import("./lib/modernizr.js");
-} catch {
-  globalThis.Modernizr = { exiforientation: true };
+    // Handle window/document not found in nodejs.
+    await import("./lib/modernizr.js");
+  } catch {
+    globalThis.Modernizr = { exiforientation: true };
+  }
 }
-}
-init()
+init();
 // https://stackoverflow.com/questions/20600800/js-client-side-exif-orientation-rotate-and-mirror-jpeg-images/31273162#31273162
 export async function rotate(file, { quality = 1.0 } = {}) {
   // Only rotate if browser does not support exit orientation.
